@@ -10,6 +10,12 @@
 let deck = [];
 let types = ['C', 'D', 'H', 'S'];
 let specials = ['A', 'J', 'Q', 'K'];
+let puntosJugador = 0, puntosComputadora = 0;
+
+/* Referencias HTML */
+const btnPedirCarta = document.querySelector('#btnPedirCarta');
+const puntoHTML = document.querySelectorAll('small');
+
 
 {/* Función que crea un nuevo deck (baraja) */ }
 const createDeck = () => {
@@ -37,7 +43,6 @@ const pedirCarta = () => {
         throw 'No hay cartas';
     }
     const carta = deck.pop();
-    console.log(carta);
     return carta;
 };
 
@@ -48,18 +53,15 @@ const valorCarta = (carta) => {
     return (isNaN(valor)) ?
         (valor === 'A') ? 11 : 10
         : parseInt(valor);
-
 }
 
-const valor = valorCarta(pedirCarta());
-console.log({valor});
+{/* Eventos */ }
+btnPedirCarta.addEventListener('click', () => // Cuando se pasa una funcion como argumento se les conoce como callback
+{
+    const carta = pedirCarta(); //Pedimos una carta
+    puntosJugador = puntosJugador + valorCarta(carta);
+    puntoHTML[0].innerText = puntosJugador;
 
 
-// let puntos = 0;
-// if (isNaN(valor)) {
-//     puntos = (valor === 'A') ? 11 : 10;
+});
 
-// } else {
-//     puntos = parseInt(valor);
-// }
-// console.log(puntos);
