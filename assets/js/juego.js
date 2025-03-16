@@ -58,7 +58,7 @@ const valorCarta = (carta) => {
         : parseInt(valor);
 }
 
-{/* Funcion juego computadora */ }
+/* Funcion juego computadora */
 const turnoComputadora = (puntosMinimos) => {
     do {
 
@@ -78,6 +78,7 @@ const turnoComputadora = (puntosMinimos) => {
 
     } while ((puntosComputadora < puntosMinimos) && (puntosMinimos <= 21));
 }
+
 
 {/* Eventos */ }
 btnPedirCarta.addEventListener('click', () => // Cuando se pasa una funcion como argumento se les conoce como callback
