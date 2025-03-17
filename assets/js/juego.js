@@ -24,7 +24,7 @@ const divCartasComputador = document.querySelector('#computadora-cartas');
 /* Función que crea un nuevo deck (baraja) */
 const createDeck = () => {
     for (let i = 2; i <= 10; i++) {
-        for (const type of types) {
+        for (const type of types) { //for...of se utiliza para iterar sobre valores en arreglos u objetos iterables
             deck.push(i + type);
         }
     }
@@ -47,7 +47,10 @@ const pedirCarta = () => {
         throw 'No hay cartas';
     }
     const carta = deck.pop();
+    console.log(deck);
     return carta;
+    
+    
 };
 
 /* Funcion que obtiene el valor de la carta */
